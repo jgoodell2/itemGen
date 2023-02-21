@@ -1,2 +1,2 @@
 # itemGen
-Code and approach for specifying and autogeneration of OER assessment items.
+Code and method for specifying, autogeneration, and automation of adaptive interoperable OER assessment items.
