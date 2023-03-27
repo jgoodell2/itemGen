@@ -71,5 +71,11 @@
  * EXAMPLE HTML:
  * <ratio-problem-002 id="myRationProblem" variable-letter="r" numerator-left="4"  numerator-right="5" denominator-right="10"></ratio-problem-001>
  */
+
+/**
+ * @TODO Add code to calculate correct answer.
+ * @TODO Add available hints with calculated content using generic hint webComponent.
+ * @TODO Add formative responses to learner based on certain incorrect answers.
+ */
  
 
