@@ -6,39 +6,8 @@
   connectedCallback() {
     const shadow = this.attachShadow({mode: 'open'});
     shadow.innerHTML = `
-    <!-- METADATA FOR THE PROBLEM TEMPLATE -- Perhaps this could all be just a link to a separate metadata file ???-->
-    <meta itemprop="name" content="" />
-    <meta itemprop="publisher" content="Jim Goodell" />
-    <meta itemprop="datePublished" content="March 26, 2023" />
-    <meta itemprop="description" content="A mathematics formative assessment item with hints for practicing solving proportions" />
-    <meta itemprop="url" href="" >
-    <meta itemprop="learningResourceType" content="http://purl.org/dcx/lrmi-vocabs/learningResourceType/assessmentItem"/>
-    <meta itemprop="interactivityType" content="http://purl.org/dcx/lrmi-vocabs/interactivityType/mixed" />
-    <span rel="educationalAlignment" typeof="https://schema.org/AlignmentObject">
-        <meta property="alignmentType" content="educationalSubject" />
-        <meta property="educationalFramework" content="Massachusetts DOE Mathematics Framework" />
-        <meta property="targetName" content""/>
-        <meta property="targetUrl" href="https://www.doe.mass.edu/frameworks/search/Map.aspx?ST_CODE=Mathematics.7.RP.A.02.c&a=1" />
-    </span>
-    <span rel="educationalAlignment" typeof="https://schema.org/AlignmentObject">
-        <meta property="alignmentType" content="educationalSubject" />
-        <meta property="educationalFramework" content="Massachusetts DOE Mathematics Framework" />
-        <meta property="targetName" content""/>
-        <meta property="targetUrl" href="https://www.doe.mass.edu/frameworks/search/Map.aspx?ST_CODE=Mathematics.7.RP.A.02.c&a=1" />
-    </span>
-    <span rel="educationalAlignment" typeof="https://schema.org/AlignmentObject">
-      <span itemprop="inDefinedTermSet"
-                      itemscope
-                      itemtype="https://schema.org/DefinedTermSet">
-        <meta property="name" content="The National Curriculum for England" />
-        <meta property="targetUrl" href="https://www.gov.uk/government/collections/national-curriculum" />
-      </span>
-      <meta property="alignmentType" content="educationalSubject" />
-      <meta property="educationalFramework" content="The National Curriculum for England" />
-      <meta property="targetName" content="Solve problems involving ratio relationships." />
-      <meta property="targetUrl" href="http://example.org/MA/6AS/MD-3"/>
-    </span>
-    <!-- The xAPI profile should be defined here so the other components know how to handle events. -->
+    <!-- METADATA FOR THE PROBLEM TEMPLATE -- Assuming here we can just link to a separate json file. Need to validate the approach.  -->
+    <meta itemprop="lrmi" content="rationProblemTemplate.json"/>
     <meta itemprop="xapiprofile" content="http://profiles.usalearning.net/xapi/043b24b4-4389-435f-b052-805fd5563166/v/1"/>
     <!-- END METADATA -->
     
