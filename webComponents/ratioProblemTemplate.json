@@ -1,0 +1,39 @@
+{
+   "@context": "http://schema.org/",
+   "@type": "CreativeWork",
+   "name": "Mathematics problem for solving proportions",
+   "publisher"
+    {
+    "@type": "Person",
+    "name": "Jim Goodell"
+    },
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+   "learningResourceType": [
+     "http://purl.org/dcx/lrmi-vocabs/learningResourceType/assessmentItem"
+     ],
+   "interactivityType": [
+     "http://purl.org/dcx/lrmi-vocabs/interactivityType/mixed"
+     ],
+   "audience": {
+     "@type": "EducationalAudience",
+     "educationalRole": "http://purl.org/dcx/lrmi-vocabs/educationalAudienceRole/student"
+     },
+    "educationalAlignment": [
+    {
+      "@type": "AlignmentObject",
+      "alignmentType": "educationalSubject",
+      "educationalFramework": "Massachusetts DOE Mathematics Framework",
+      "targetName": "Mathematics > Grade 7 > Ratios and Proportional Relationships",
+      "targetDescription": "[7.RP.A.2.c] - Represent proportional relationships by equations. For example, if total cost t is proportional to the number n of items purchased at a constant price p, the relationship between the total cost and the number of items can be expressed as t = pn.",
+      "targetUrl": "https://www.doe.mass.edu/frameworks/search/Map.aspx?ST_CODE=Mathematics.7.RP.A.02.c&a=1"
+    },
+    {
+      "@type": "AlignmentObject",
+      "alignmentType": "educationalSubject",
+      "educationalFramework": "The National Curriculum for England",
+      "targetName": "Solve problems involving ratio relationships.",
+      "targetUrl" : "http://example.org/MA/6AS/MD-3"
+    }
+  ],
+   "url": "http://example.org/lessonplan"
+}
