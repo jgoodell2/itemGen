@@ -34,7 +34,7 @@
     ${this.getAttribute('numerator-right')}</sup><span>&frasl;</span><sub>
     ${this.getAttribute('denominator-right')}</sub></span></p></p><p><i>r</i>&nbsp;=&nbsp;
     <input id="response" type="text"></input>
-    <br/>(Enter answer as a fraction.)</p></div>`;
+    <br/>(Enter answer as a fraction or whole number.)</p></div>`;
    <!-- ...ADD COMMON USER RESPONSE COMPONENT AND OPTIONAL INSTRUMENTATION COMPONENT HERE -->
   }
 });
