@@ -14,6 +14,7 @@
    "interactivityType": [
      "http://purl.org/dcx/lrmi-vocabs/interactivityType/mixed"
      ],
+   "isBasedOnUrl": "http://example.com/the/url/of/the/item/template/",
    "audience": {
      "@type": "EducationalAudience",
      "educationalRole": "http://purl.org/dcx/lrmi-vocabs/educationalAudienceRole/student"
@@ -36,4 +37,10 @@
     }
   ],
    "url": "http://example.org/lessonplan"
+}
+{
+   "@context": "http://credreg.net/ctdl/schema/context/json",
+	"@type": "LearningOpportunityProfile",
+   "description": "This is just to give a CTID to allow look up on Credential Engine if the item was registered as a learning opportunity there."
+	"CTID": "ce-9db20b92-0787-43b2-83e1-b967d73d5df9"
 }
