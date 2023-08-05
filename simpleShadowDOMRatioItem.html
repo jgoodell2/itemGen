@@ -38,21 +38,26 @@
     -->
     <!-- END STYLES -->
 
-    <!-- STIMULUS -- HTML (and javascript if applicable) for the item problem stimulus and learner interactivity functions --> 
+    <!-- STIMULUS -- HTML (and javascript if applicable) for the item problem stimulus and learner interactivity functions. 
+      -- ANYTHING** can go here as long as any learner actions are captured in a way compatible with the coresponding xAPI Profile,
+      -- e.g. a short-answer-hinted item must capture a "responseValue" property that is sent in an xAPI statement amd  
+      -- send xAPI statements with each hint request event and statements about any hints or feedback given to the learner.
+      -- **Anything means anything that can safely be caontainerized for delivery in modern browsers and div within context of the delivery context page.
+    --> 
     <div id="stimulus"><p>Solve for <i>
     z</i>.</p><p><span class="frac"><sup>
     9</sup><span>&frasl;</span><sub><i>
     z</i></sub></span>&nbsp;=&nbsp;<span class="frac"><sup>
     7</sup><span>&frasl;</span><sub>
     5</sub></span></p></p><p><i>z</i>&nbsp;=&nbsp;
-    <input><button id="submitResponse">Submit</button>
+    <input id="response"><button id="submitResponse">Submit</button>
     </p></div>
 
     <!-- Hint request -->
     <button id="requestHint" hintsEnabled="true">Get Hint</button>
   <!-- @TODO decide best method of enabling or disabiling hints...or do we offer hinted and un-hinted variations of items? -->
 
-    <!-- SCRIPT(S) FOR RESPONSE HANDLING standardized for the problem type and xAPI Profile 
+    <!-- RESPONSE -- SCRIPT(S) FOR RESPONSE HANDLING standardized for the problem type and xAPI Profile 
       -- Can we specify a standard script for each xAPI profile that includes response processing and instrumentaation?
       -- For example for a short answer problem specifying the rules for evaluating the response and sending the xAPI statement with result.
       -- Can we hide the 'corrrect answer logic' with something like checksum to do it in the browser or does the evaluation need to happen on the server side?
