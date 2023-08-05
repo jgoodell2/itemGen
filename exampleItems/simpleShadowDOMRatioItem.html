@@ -1,0 +1,60 @@
+<template shadowrootmode="open">
+    <!-- Attempt at a simple html presentation of an instrumented item -->
+  
+    <!-- UNIQUE URL for this PROBLEM (required) -->
+    <meta itemprop="template" content="http://itembank.example.org/activities/b43b24b4-4389-435f-b052-805fd5563180/v/1"/>
+    <!-- METADATA FOR THE PROBLEM TEMPLATE (required if based on a template) -->
+    <meta itemprop="template" content="http://itembank.example.org/templates/b43b24b4-4389-435f-b052-805fd5563180/v/1"/>
+    <!-- Competency definition(s) and context metadata (one or more required) -->
+    <meta itemprop="scd" content="http://scd.example.org/b43b24b4-4389-435f-b052-805fd5563180"/>
+    <meta itemprop="scd" content="http://scd.example.org/b43b24b4-4389-435f-b052-805fd5563180"/>
+    <!-- xAPI PROFILE (required) so the other components know how to handle learner interaction data from this activity. -->
+    <meta itemprop="xapiprofile" content="http://profiles.usalearning.net/xapi/043b24b4-4389-435f-b052-805fd5563166/v/1"/>
+    <!-- Other metadata may be specified here or in the template file using IEEE 2881 / DCMI/LRMI / Schema.org standards -->
+    <!-- END METADATA -->
+
+    <!-- STYLES FOR THIS PROBLEM TYPE -->
+    <style>
+      i, #variable {color: blue;}
+      span.frac {display: inline-block; text-align: center; vertical-align: middle;}
+      span.frac > sup, span.frac > sub {display: block; font: inherit; padding: 0 0.3em;}
+      span.frac > sup {border-bottom: 0.08em solid;}
+      span.frac > span {display: none;}
+      #hintTable {border: 1px solid black; font: 12px Arial, sans-serif; width: 300px;}
+      #hintCell, #hintLabel {padding: 8px;}
+      #hintLabel {padding: 8px; width: 20px; background-color: #dddddd; text-align:center;}
+      #hint1, #hint2, #hint3, #hint4, #hint5, #hint6, #div-correct-feedback, #div-decimal-feedback {visibility: hidden;}
+      #feedback {color: blue; backgroung-color: white; text-align: left; padding: 8px;}
+    </style>
+    <!-- @TODO -- ACCESSIBILITY 
+      -- How do we interact with the browser and platform to adapt the styles for accessibility? 
+      -- e.g. adjust font size for visualy impared learners 
+      -- How do we know about the need for adaptation within this component and how do we adapt? 
+      -- Could it be that this expects and usess certain styles in the parent RootNode? 
+      -- Could we have alternate items in the item bank for certain kinds of accomodations? 
+      -- Might accomodtions need to be separate items with different competencies linked, e.g. reading a passage is different from listening to a pasage with a screen reader?
+    -->
+    <!-- END STYLES -->
+
+    <!-- STIMULUS -- HTML (and javascript if applicable) for the item problem stimulus and learner interactivity functions --> 
+    <div id="stimulus"><p>Solve for <i>
+    z</i>.</p><p><span class="frac"><sup>
+    9</sup><span>&frasl;</span><sub><i>
+    z</i></sub></span>&nbsp;=&nbsp;<span class="frac"><sup>
+    7</sup><span>&frasl;</span><sub>
+    5</sub></span></p></p><p><i>r</i>&nbsp;=&nbsp;
+    <input><button id="submitResponse">Submit</button>
+    </p></div>
+
+    <!-- Hint request -->
+    <button id="requestHint" hintsEnabled="true">Submit</button>
+  <!-- @TODO decide best method of enabling or disabiling hints...or do we offer hinted and un-hinted variations of items? -->
+
+    <!-- SCRIPT(S) FOR RESPONSE HANDLING standardized for the problem type and xAPI Profile 
+      -- Can we specify a standard script for each xAPI profile that includes response processing and instrumentaation?
+      -- For example for a short answer problem specifying the rules for evaluating the response and sending the xAPI statement with result.
+      -- Can we hide the 'corrrect answer logic' with something like checksum to do it in the browser or does the evaluation need to happen on the server side?
+      -- Or do we do minimal processing and statement creation in the browser and send the response for server-side evaluation with AJAX? (Would this limit use on some platforms?)
+    -->
+      
+  </template>
