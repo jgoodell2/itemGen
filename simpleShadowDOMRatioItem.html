@@ -55,8 +55,200 @@
 
     <!-- Hint request -->
     <button id="requestHint" hintsEnabled="true">Get Hint</button>
-  <!-- @TODO decide best method of enabling or disabiling hints...or do we offer hinted and un-hinted variations of items? -->
+    
+  <!-- @TODO decide best method of handling or constraining hints to maximize flexibility while controlling for consistent display. How to handle hinted and un-hinted variations of items? -->
+   
+    <!-- Hints Display Block -->
+        <div id="divHints">
+            <div id="hint1">
+                <table id="hintTable">
+                    <tr>
+                        <td id="hintLabel">
+                            Hint
+                            <br/>
+                             1 
+                            <br/>
+                            of
+                            <br/>
+                            5
+                        </td>
+                        <td id="hintCell">
+                            <p>
+                                Multiply both sides by 
+                                <i>r</i>
+                                .
+                            </p>
+                            <p>
+                                <i>r</i>
+                                &nbsp;X&nbsp;
+                                <span class="frac">
+                                    <sup>4</sup>
+                                    <span>&frasl;</span>
+                                    <sub>
+                                        <i>r</i>
+                                    </sub>
+                                </span>
+                                &nbsp;=&nbsp;
+                                <span class="frac">
+                                    <sup>5</sup>
+                                    <span>&frasl;</span>
+                                    <sub>7</sub>
+                                </span>
+                                &nbsp;X&nbsp;
+                                <i>r</i>
+                            </p>
+                        </td>
+                        <td width="20px">
+                            <button onclick="nextHint()">Next hint</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
+            <div id="hint2">
+                <table id="hintTable">
+                    <tr>
+                        <td id="hintLabel">
+                            Hint
+                            <br/>
+                             2 
+                            <br/>
+                            of
+                            <br/>
+                            5
+                        </td>
+                        <td id="hintCell">
+                            <p>
+                                4&nbsp;=
+                                <span class="frac">
+                                    <sup>5</sup>
+                                    <span>&frasl;</span>
+                                    <sub>7</sub>
+                                </span>
+                                <i>r</i>
+                                &nbsp;
+                            </p>
+                        </td>
+                        <td width="20px">
+                            <button onclick="nextHint()">Next hint</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="hint3">
+                <table id="hintTable">
+                    <tr>
+                        <td id="hintLabel">
+                            Hint
+                            <br/>
+                             3 
+                            <br/>
+                            of
+                            <br/>
+                            5
+                        </td>
+                        <td id="hintCell">
+                            <p>
+                                Multiply both sides by&nbsp;
+                                <span class="frac">
+                                    <sup>7</sup>
+                                    <span>&frasl;</span>
+                                    <sub>5</sub>
+                                </span>
+                                .
+                            </p>
+                            <p>
+                                4&nbsp;X&nbsp;
+                                <span class="frac">
+                                    <sup>7</sup>
+                                    <span>&frasl;</span>
+                                    <sub>5</sub>
+                                </span>
+                                &nbsp;=&nbsp;
+                                <span class="frac">
+                                    <sup>5</sup>
+                                    <span>&frasl;</span>
+                                    <sub>7</sub>
+                                </span>
+                                &nbsp;
+                                <i>r</i>
+                                &nbsp;X
+                                <span class="frac">
+                                    <sup>7</sup>
+                                    <span>&frasl;</span>
+                                    <sub>5</sub>
+                                </span>
+                            </p>
+                        </td>
+                        <td width="20px">
+                            <button onclick="nextHint()">Next hint</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="hint4">
+                <table id="hintTable">
+                    <tr>
+                        <td id="hintLabel">
+                            Hint
+                            <br/>
+                             4 
+                            <br/>
+                            of
+                            <br/>
+                            5
+                        </td>
+                        <td id="hintCell">
+                            <p>
+                                <span class="frac">
+                                    <sup>4&nbsp;X&nbsp;7</sup>
+                                    <span>&frasl;</span>
+                                    <sub>5</sub>
+                                </span>
+                                &nbsp;=&nbsp;
+                                <i>r</i>
+                            </p>
+                        </td>
+                        <td width="20px">
+                            <button onclick="nextHint()">Next hint</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="hint5">
+                <table id="hintTable">
+                    <tr>
+                        <td id="hintLabel">
+                            Hint
+                            <br/>
+                             5 
+                            <br/>
+                            of
+                            <br/>
+                            5
+                        </td>
+                        <td id="hintCell">
+                            <p>
+                                <i>r</i>
+                                &nbsp;=&nbsp;
+                                <span class="frac">
+                                    <sup>28</sup>
+                                    <span>&frasl;</span>
+                                    <sub>5</sub>
+                                </span>
+                            </p>
+                        </td>
+                        <td width="20px"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- END HINT BLOCK>
+    <!-- END STIMULUS BLOCK>
     <!-- RESPONSE -- SCRIPT(S) FOR RESPONSE HANDLING standardized for the problem type and xAPI Profile 
       -- Can we specify a standard script for each xAPI profile that includes response processing and instrumentaation?
       -- For example for a short answer problem specifying the rules for evaluating the response and sending the xAPI statement with result.
