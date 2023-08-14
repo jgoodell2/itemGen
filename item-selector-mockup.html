@@ -3,7 +3,8 @@
     <div id="itemtype"></div>
     <script>
       // using the current page's URL
-const myUrl2 = new URL(window.location.toLocaleString());
+const myUrl = new URL(window.location.toLocaleString());
+      const urlParams = myUrl.searchParams;
       const itemtype = urlParams.get('itemtype');
       document.getElementById("itemtype").innerHTML = itemtype;
     </script>
