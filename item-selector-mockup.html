@@ -9,7 +9,13 @@ const myUrl = new URL(window.location.toLocaleString());
       document.getElementById("itemtype").innerHTML = itemtype;
 
       function afterJurisdictionSelect() {
-        document.getElementById("itemtype").visibility = "visible";
+        document.getElementById("frameworkSelect").style.visibility = "visible";
+      }
+      function afterFrameworkSelect() {
+        document.getElementById("gradeLevelSelect").style.visibility = "visible";
+      }
+      function afterGradeLevelSelect() {
+        document.getElementById("competencySelect").style.visibility = "visible";
       }
     </script>
     <form>
@@ -68,14 +74,14 @@ const myUrl = new URL(window.location.toLocaleString());
         <option value="WI">Wisconsin</option>
         <option value="WY">Wyoming</option>
       </select>  
-      <div id="frameworkSelect>
-        <br/><select name="framework" id="framework" style="visibility:hidden;">
+      <div id="frameworkSelect" style="visibility:hidden;">
+        <br/><select name="framework" id="framework" onChange="afterFrameworkSelect()">
           <option value="" selected="selected">Select a Framework</option>
           <option value="NGSS">Next Generation Science Standards</option>
         </select>
       </div>
-      <div id="gradeLevelSelect"?
-        <br/><select name="gradeLevel" id="gradeLevel" style="visibility:hidden;">
+      <div id="gradeLevelSelect"  style="visibility:hidden;"  onChange="afterGradeLevelSelect()">
+        <br/><select name="gradeLevel" id="gradeLevel">
           <option value="" selected="selected">Select a Grade level or range</option>
           <option value="HS">High School</option>
         </select>
