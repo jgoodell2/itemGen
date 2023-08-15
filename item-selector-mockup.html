@@ -8,5 +8,109 @@ const myUrl = new URL(window.location.toLocaleString());
       const itemtype = urlParams.get('itemtype');
       document.getElementById("itemtype").innerHTML = itemtype;
     </script>
+    <form>
+      <select name="jurisdiction" id="jurisdiction">
+        <option value="" selected="selected">Select a Jurisdiction</option>
+        <option value="">National or Multi-state</option>
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AR">Arkansas</option>
+        <option value="CA">California</option>
+        <option value="CO">Colorado</option>
+        <option value="CT">Connecticut</option>
+        <option value="DE">Delaware</option>
+        <option value="DC">District Of Columbia</option>
+        <option value="FL">Florida</option>
+        <option value="GA">Georgia</option>
+        <option value="HI">Hawaii</option>
+        <option value="ID">Idaho</option>
+        <option value="IL">Illinois</option>
+        <option value="IN">Indiana</option>
+        <option value="IA">Iowa</option>
+        <option value="KS">Kansas</option>
+        <option value="KY">Kentucky</option>
+        <option value="LA">Louisiana</option>
+        <option value="ME">Maine</option>
+        <option value="MD">Maryland</option>
+        <option value="MA">Massachusetts</option>
+        <option value="MI">Michigan</option>
+        <option value="MN">Minnesota</option>
+        <option value="MS">Mississippi</option>
+        <option value="MO">Missouri</option>
+        <option value="MT">Montana</option>
+        <option value="NE">Nebraska</option>
+        <option value="NV">Nevada</option>
+        <option value="NH">New Hampshire</option>
+        <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+        <option value="NY">New York</option>
+        <option value="NC">North Carolina</option>
+        <option value="ND">North Dakota</option>
+        <option value="OH">Ohio</option>
+        <option value="OK">Oklahoma</option>
+        <option value="OR">Oregon</option>
+        <option value="PA">Pennsylvania</option>
+        <option value="RI">Rhode Island</option>
+        <option value="SC">South Carolina</option>
+        <option value="SD">South Dakota</option>
+        <option value="TN">Tennessee</option>
+        <option value="TX">Texas</option>
+        <option value="UT">Utah</option>
+        <option value="VT">Vermont</option>
+        <option value="VA">Virginia</option>
+        <option value="WA">Washington</option>
+        <option value="WV">West Virginia</option>
+        <option value="WI">Wisconsin</option>
+        <option value="WY">Wyoming</option>
+      </select>  
+      <select name="framework" id="framework">
+        <option value="" selected="selected">Select a Framework</option>
+        <option value="NGSS">Next Generation Science Standards</option>
+      </select>
+      <select name="gradeLevel" id="gradeLevel">
+        <option value="" selected="selected">Select a Grade level or range</option>
+        <option value="HS">High School</option>
+      </select>
+Grades Nine through Twelve Standards
+
+Physical Science
+
+HS-PS1 Matter and Its Interactions
+
+<input type="radio" id="HS-PS1-1" name="competencyToAssess" value="HS-PS1-1"> HS-PS1-1 Use the periodic table as a model to predict the relative properties of elements based on the patterns of electrons in the outermost energy level of atoms.
+<input type="radio" id="HS-PS1-1" name="competencyToAssess" value="HS-PS1-2">HS-PS1-2 Construct and revise an explanation for the outcome of a simple chemical reaction based on the outermost electron states of atoms, trends in the periodic table, and knowledge of the patterns of chemical properties.
+<input type="radio" id="HS-PS1-1" name="competencyToAssess" value="HS-PS1-3">HS-PS1-3 Plan and conduct an investigation to gather evidence to compare the structure of substances at the bulk scale to infer the strength of electrical forces between particles.
+<input type="radio" id="HS-PS1-1" name="competencyToAssess" value="HS-PS1-4">HS-PS1-4 Develop a model to illustrate that the release or absorption of energy from a chemical reaction system depends upon the changes in total bond energy.
+<input type="radio" id="HS-PS1-1" name="competencyToAssess" value="HS-PS1-5">HS-PS1-5 Apply scientific principles and evidence to provide an explanation about the effects of changing the temperature or concentration of the reacting particles on the rate at which a reaction occurs.
+<input type="radio" id="HS-PS1-1" name="competencyToAssess" value="HS-PS1-6">HS-PS1-6 Refine the design of a chemical system by specifying a change in conditions that would produce increased amounts of products at equilibrium.
+<input type="radio" id="HS-PS1-1" name="competencyToAssess" value="HS-PS1-7">HS-PS1-7 Use mathematical representations to support the claim that atoms, and therefore mass, are conserved during a chemical reaction.
+<input type="radio" id="HS-PS1-1" name="competencyToAssess" value="HS-PS1-8">HS-PS1-8 Develop models to illustrate the changes in the composition of the nucleus of the atom and the energy released during the processes of fission, fusion, and radioactive decay.
+      
+HS-PS2 Motion and Stability: Forces and Interactions
+
+HS-PS2-1 Analyze data to support the claim that Newton’s second law of motion describes the mathematical relationship among the net force on a macroscopic object, its mass, and its acceleration.
+HS-PS2-2 Use mathematical representations to support the claim that the total momentum of a system of objects is conserved when there is no net force on the system.
+HS-PS2-3 Apply science and engineering ideas to design, evaluate, and refine a device that minimizes the force on a macroscopic object during a collision.
+HS-PS2-4 Use mathematical representations of Newton’s Law of Gravitation and Coulomb’s Law to describe and predict the gravitational and electrostatic forces between objects.
+HS-PS2-5 Plan and conduct an investigation to provide evidence that an electric current can produce a magnetic field and that a changing magnetic field can produce an electric current.
+HS-PS2-6 Communicate scientific and technical information about why the molecular-level structure is important in the functioning of designed materials.
+      
+HS-PS3 Energy
+
+HS-PS3-1 Create a computational model to calculate the change in the energy of one component in a system when the change in energy of the other component(s) and energy flows in and out of the system are known.
+HS-PS3-2 Develop and use models to illustrate that energy at the macroscopic scale can be accounted for as a combination of energy associated with the motion of particles (objects) and energy associated with the relative positions of particles (objects).
+HS-PS3-3 Design, build, and refine a device that works within given constraints to convert one form of energy into another form of energy.
+HS-PS3-4 Plan and conduct an investigation to provide evidence that the transfer of thermal energy when two components of different temperature are combined within a closed system results in a more uniform energy distribution among the components in the system (second law of thermodynamics).
+HS-PS3-5 Develop and use a model of two objects interacting through electric or magnetic fields to illustrate the forces between objects and the changes in energy of the objects due to the interaction.
+      
+HS-PS4 Waves and Their Applications in Technologies for Information Transfer
+
+HS-PS4-1 Use mathematical representations to support a claim regarding relationships among the frequency, wavelength, and speed of waves traveling in various media.
+HS-PS4-2 Evaluate questions about the advantages of using digital transmission and storage of information.
+HS-PS4-3 Evaluate the claims, evidence, and reasoning behind the idea that electromagnetic radiation can be described either by a wave model or a particle model, and that for some situations one model is more useful than the other.
+HS-PS4-4 Evaluate the validity and reliability of claims in published materials of the effects that different frequencies of electromagnetic radiation have when absorbed by matter.
+HS-PS4-5 Communicate technical information about how some technological devices use the principles of wave behavior and wave interactions with matter to transmit and capture information and energy.
+    </form>
   </body>
 </html>
