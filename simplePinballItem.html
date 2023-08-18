@@ -1,1 +1,256 @@
-You are designing a rudimentary pinball machine and trying to find the perfect spring for your machine. The spring initially rests at s_0 = 4 \mathrm{m}. You want to use an antique pinball that you found that has a mass m = 1.05 \mathrm{kg}.  Based on your design, you know that the angle of your playfield will be \theta = 15\degree, your pinball needs to have a final ejected velocity of v = 1.8 \mathrm{m/s}, and it needs to travel d = 2.2\mathrm{m} in order to enter the playing field properly. For simplicity, assume the pinball is not rolling and just sliding on the smooth field without friction. What does your spring constant need to be if you only have enough room for the spring to be compressed to a length of s = 1.4 \mathrm{m}? Round your answer to 2 decimal places.
+<!-- https://jgoodell2.github.io/itemGen/simplePinballItem.html -->
+
+<div shadowrootmode="open">
+    <!-- Attempt at a simple html presentation of an instrumented item -->
+  
+    <!-- UNIQUE URL for this PROBLEM (required) -->
+    <meta itemprop="template" content="http://itembank.example.org/activities/b43b24b4-4389-435f-b052-805fd5563180/v/1"/>
+    <!-- METADATA FOR THE PROBLEM TEMPLATE (required if based on a template) -->
+    <meta itemprop="template" content="http://itembank.example.org/templates/b43b24b4-4389-435f-b052-805fd5563180/v/1"/>
+    <!-- Competency definition(s) and context metadata (one or more required) -->
+    <meta itemprop="scd" content="http://scd.example.org/b43b24b4-4389-435f-b052-805fd5563180"/>
+    <meta itemprop="scd" content="http://scd.example.org/b43b24b4-4389-435f-b052-805fd5563180"/>
+    <!-- xAPI PROFILE (required) so the other components know how to handle learner interaction data from this activity. -->
+    <meta itemprop="xapiprofile" content="http://profiles.usalearning.net/xapi/043b24b4-4389-435f-b052-805fd5563166/v/1"/>
+    <!-- Other metadata may be specified here or in the template file using IEEE 2881 / DCMI/LRMI / Schema.org standards -->
+    <!-- END METADATA -->
+
+    <!-- STYLES FOR THIS PROBLEM TYPE -->
+    <style>
+      i, #variable {color: blue;}
+      span.frac {display: inline-block; text-align: center; vertical-align: middle;}
+      span.frac > sup, span.frac > sub {display: block; font: inherit; padding: 0 0.3em;}
+      span.frac > sup {border-bottom: 0.08em solid;}
+      span.frac > span {display: none;}
+      #hintTable {border: 1px solid black; font: 12px Arial, sans-serif; width: 300px;}
+      #hintCell, #hintLabel {padding: 8px;}
+      #hintLabel {padding: 8px; width: 20px; background-color: #dddddd; text-align:center;}
+      #hint1, #hint2, #hint3, #hint4, #hint5, #hint6, #div-correct-feedback, #div-decimal-feedback {visibility: hidden;}
+      #feedback {color: blue; backgroung-color: white; text-align: left; padding: 8px;}
+    </style>
+    <!-- @TODO -- ACCESSIBILITY 
+      -- How do we interact with the browser and platform to adapt the styles for accessibility? 
+      -- e.g. adjust font size for visualy impared learners 
+      -- How do we know about the need for adaptation within this component and how do we adapt? 
+      -- Could it be that this expects and usess certain styles in the parent RootNode? 
+      -- Could we have alternate items in the item bank for certain kinds of accomodations? 
+      -- Might accomodtions need to be separate items with different competencies linked, e.g. reading a passage is different from listening to a pasage with a screen reader?
+    -->
+    <!-- END STYLES -->
+
+    <!-- STIMULUS -- HTML (and javascript if applicable) for the item problem stimulus and learner interactivity functions. 
+      -- ANYTHING** can go here as long as any learner actions are captured in a way compatible with the coresponding xAPI Profile,
+      -- e.g. a short-answer-hinted item must capture a "responseValue" property that is sent in an xAPI statement amd  
+      -- send xAPI statements with each hint request event and statements about any hints or feedback given to the learner.
+      -- **Anything means anything that can safely be caontainerized for delivery in modern browsers and div within context of the delivery context page.
+    --> 
+    <div id="stimulus">
+      You are designing a rudimentary pinball machine and trying to find the perfect spring for your machine. The spring initially rests at s_0 = 4 \mathrm{m}. You want to use an antique pinball that you found that has a mass m = 1.05 \mathrm{kg}.  Based on your design, you know that the angle of your playfield will be \theta = 15\degree, your pinball needs to have a final ejected velocity of v = 1.8 \mathrm{m/s}, and it needs to travel d = 2.2\mathrm{m} in order to enter the playing field properly. For simplicity, assume the pinball is not rolling and just sliding on the smooth field without friction. What does your spring constant need to be if you only have enough room for the spring to be compressed to a length of s = 1.4 \mathrm{m}? Round your answer to 2 decimal places.
+      <img src="./images/V1A.svg">
+    <input id="response"><button id="submitResponse">Submit</button>
+    </p></div>
+
+    <!-- Hint request -->
+    <button id="requestHint" hintsEnabled="true">Get Hint</button>
+    
+  <!-- @TODO decide best method of handling or constraining hints to maximize flexibility while controlling for consistent display. How to handle hinted and un-hinted variations of items? -->
+   
+    <!-- Hints Display Block -->
+        <div id="divHints">
+            <div id="hint1">
+                <table id="hintTable">
+                    <tr>
+                        <td id="hintLabel">
+                            Hint
+                            <br/>
+                             1 
+                            <br/>
+                            of
+                            <br/>
+                            5
+                        </td>
+                        <td id="hintCell">
+                            <p>
+                                Multiply both sides by 
+                                <i>r</i>
+                                .
+                            </p>
+                            <p>
+                                <i>r</i>
+                                &nbsp;X&nbsp;
+                                <span class="frac">
+                                    <sup>4</sup>
+                                    <span>&frasl;</span>
+                                    <sub>
+                                        <i>r</i>
+                                    </sub>
+                                </span>
+                                &nbsp;=&nbsp;
+                                <span class="frac">
+                                    <sup>5</sup>
+                                    <span>&frasl;</span>
+                                    <sub>7</sub>
+                                </span>
+                                &nbsp;X&nbsp;
+                                <i>r</i>
+                            </p>
+                        </td>
+                        <td width="20px">
+                            <button onclick="nextHint()">Next hint</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="hint2">
+                <table id="hintTable">
+                    <tr>
+                        <td id="hintLabel">
+                            Hint
+                            <br/>
+                             2 
+                            <br/>
+                            of
+                            <br/>
+                            5
+                        </td>
+                        <td id="hintCell">
+                            <p>
+                                4&nbsp;=
+                                <span class="frac">
+                                    <sup>5</sup>
+                                    <span>&frasl;</span>
+                                    <sub>7</sub>
+                                </span>
+                                <i>r</i>
+                                &nbsp;
+                            </p>
+                        </td>
+                        <td width="20px">
+                            <button onclick="nextHint()">Next hint</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="hint3">
+                <table id="hintTable">
+                    <tr>
+                        <td id="hintLabel">
+                            Hint
+                            <br/>
+                             3 
+                            <br/>
+                            of
+                            <br/>
+                            5
+                        </td>
+                        <td id="hintCell">
+                            <p>
+                                Multiply both sides by&nbsp;
+                                <span class="frac">
+                                    <sup>7</sup>
+                                    <span>&frasl;</span>
+                                    <sub>5</sub>
+                                </span>
+                                .
+                            </p>
+                            <p>
+                                4&nbsp;X&nbsp;
+                                <span class="frac">
+                                    <sup>7</sup>
+                                    <span>&frasl;</span>
+                                    <sub>5</sub>
+                                </span>
+                                &nbsp;=&nbsp;
+                                <span class="frac">
+                                    <sup>5</sup>
+                                    <span>&frasl;</span>
+                                    <sub>7</sub>
+                                </span>
+                                &nbsp;
+                                <i>r</i>
+                                &nbsp;X
+                                <span class="frac">
+                                    <sup>7</sup>
+                                    <span>&frasl;</span>
+                                    <sub>5</sub>
+                                </span>
+                            </p>
+                        </td>
+                        <td width="20px">
+                            <button onclick="nextHint()">Next hint</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="hint4">
+                <table id="hintTable">
+                    <tr>
+                        <td id="hintLabel">
+                            Hint
+                            <br/>
+                             4 
+                            <br/>
+                            of
+                            <br/>
+                            5
+                        </td>
+                        <td id="hintCell">
+                            <p>
+                                <span class="frac">
+                                    <sup>4&nbsp;X&nbsp;7</sup>
+                                    <span>&frasl;</span>
+                                    <sub>5</sub>
+                                </span>
+                                &nbsp;=&nbsp;
+                                <i>r</i>
+                            </p>
+                        </td>
+                        <td width="20px">
+                            <button onclick="nextHint()">Next hint</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="hint5">
+                <table id="hintTable">
+                    <tr>
+                        <td id="hintLabel">
+                            Hint
+                            <br/>
+                             5 
+                            <br/>
+                            of
+                            <br/>
+                            5
+                        </td>
+                        <td id="hintCell">
+                            <p>
+                                <i>r</i>
+                                &nbsp;=&nbsp;
+                                <span class="frac">
+                                    <sup>28</sup>
+                                    <span>&frasl;</span>
+                                    <sub>5</sub>
+                                </span>
+                            </p>
+                        </td>
+                        <td width="20px"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- END HINT BLOCK>
+    <!-- END STIMULUS BLOCK>
+    <!-- RESPONSE -- SCRIPT(S) FOR RESPONSE HANDLING standardized for the problem type and xAPI Profile 
+      -- Can we specify a standard script for each xAPI profile that includes response processing and instrumentaation?
+      -- For example for a short answer problem specifying the rules for evaluating the response and sending the xAPI statement with result.
+      -- Can we hide the 'corrrect answer logic' with something like checksum to do it in the browser or does the evaluation need to happen on the server side?
+      -- Or do we do minimal processing and statement creation in the browser and send the response for server-side evaluation with AJAX? (Would this limit use on some platforms?)
+    -->
+
+  </div>
