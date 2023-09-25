@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head><meta charset="UTF-8">
    <!-- Get reusable scripts that hide the complexity -->
@@ -16,22 +17,23 @@
         ADL.XAPIWrapper.changeConfig(conf);
  
         // Set values and set up xAPI Statement in the right format
-        var actorName = "jdg"; // Change this to your name or alias
-        var actorMail = "mailto:jdg@example.com";
-        var verbId = "http://example.com/xapi/answered";
+        var actorName = "https://example.com/users/user-v1:1abcb33beeb811dca15f0ac3e47b88d9"; // Anonomous hashed id
+        //var actorMail = "mailto:jdg@example.com";
+        var actorOpenId = "https://example.com/users/user-v1:1abcb33beeb811dca15f0ac3e47b88d9";
+        var verbId = "http://adlnet.gov/expapi/verbs/answered";
         var verbDisplay =  "answered";
-        var objectId = "https://jgoodell2.github.io/itemGen/xapisimple.html";
+        var objectId = "https://jgoodell2.github.io/fast/api/xapisimple.html";
         var objectName = buttonName + " Button";
         var resultResponseValue = buttonName;
         let objectDescription = "Example xAPI instrumented button.";
         var resultSuccessValue = false;
-        if (buttonName="True") {resultSuccessValue=true};
+        if (buttonName=="true") {resultSuccessValue=true};
         let agent = navigator.userAgent;
         let contextActivity = "";
         let contextActivityName = "";
        // We’ll fill in other defaults behind the scenes...
        // extensions_user-agent, extensions_aligned_to, platform, registration
-        var statement = setupSimpleXAPI(actorName, actorMail, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity, contextActivityName);
+        var statement = setupSimpleXAPI(actorName, actorOpenId, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity, contextActivityName);
  
         // Dispatch the statement to the LRS
         var result = ADL.XAPIWrapper.sendStatement(statement);
@@ -40,7 +42,7 @@
 </head>
   
 <body>
-    <!-- We’ll send the button’s “name” as optional “response” along with the  with the (actor) (interacted) (button) xAPI statement -->
+    <!-- We’ll send the button’s “name” as optional “response” along with the  with the (actor) (answered) (button) xAPI statement -->
     <button type="button" name="true" onclick="send_statement(this.name)">True</button>
     <button type="button" name="false" onclick="send_statement(this.name)">False</button>
 </body>
