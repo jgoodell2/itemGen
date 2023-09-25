@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="UTF-8">
+   <!-- Get reusable scripts that hide the complexity -->
+   <script type="text/javascript" src="./js/jimsxapiwrapper.js"></script>
+   <script type="text/javascript" src="./js/cryptojs_v3.1.2.js"></script>
+    <script type="text/javascript" src="./js/xapiwrapper.js"></script>
+    <!------------------------------------->
+    
+   <!-- The following script handles the local details to send the xAPI Statement -->
+    <script>
+    function send_statement(buttonName){
+        var conf = {
+             "endpoint" : "https://lrs.adlnet.gov/xapi/",
+             "auth" : "Basic " + toBase64("xapi-tools:xapi-tools")
+             };
+        ADL.XAPIWrapper.changeConfig(conf);
+ 
+        // Set values and set up xAPI Statement in the right format
+        var actorName = "jdg"; // Change this to your name or alias
+        var actorMail = "mailto:jdg@example.com";
+        var verbId = "http://example.com/xapi/answered";
+        var verbDisplay =  "answered";
+        var objectId = "https://jgoodell2.github.io/itemGen/xapisimple.html";
+        var objectName = buttonName + " Button";
+        var resultResponseValue = buttonName;
+        let objectDescription = "Example xAPI instrumented button.";
+        var resultSuccessValue = false;
+        if (buttonName="True") {resultSuccessValue=true};
+        let agent = navigator.userAgent;
+        let contextActivity = "";
+        let contextActivityName = "";
+       // We’ll fill in other defaults behind the scenes...
+       // extensions_user-agent, extensions_aligned_to, platform, registration
+        var statement = setupSimpleXAPI(actorName, actorMail, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity, contextActivityName);
+ 
+        // Dispatch the statement to the LRS
+        var result = ADL.XAPIWrapper.sendStatement(statement);
+    }
+    </script>
+</head>
+  
+<body>
+    <!-- We’ll send the button’s “name” as optional “response” along with the  with the (actor) (interacted) (button) xAPI statement -->
+    <button type="button" name="true" onclick="send_statement(this.name)">True</button>
+    <button type="button" name="false" onclick="send_statement(this.name)">False</button>
+</body>
+</html>
