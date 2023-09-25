@@ -1,11 +1,11 @@
 
-         function setupSimpleXAPI(actorName, actorMail, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity, contextActivityName){
+         function setupSimpleXAPI(actorName, actorOpenId, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity, contextActivityName){
 
                 let userAgent = JSON.stringify(navigator.userAgent);
 
                  var statement = {
                      "actor": {
-                         "mbox": actorMail,
+                         "openid": actorOpenId,
                          "name": actorName,
                          "objectType": "Agent"
                      },
@@ -36,5 +36,3 @@
                  return statement;
 
              }
-
-
