@@ -2,9 +2,11 @@
  * Active Button WebComponent
  * @author Jim Goodell
  */
- customElements.define('b', class extends HTMLElement {
-  connectedCallback() {
-    const shadow = this.attachShadow({mode: 'open'});
+class activeButton extends HTMLElement {
+      constructor() {
+        super();
+        // Create shaddow root
+        const shadowRoot = this.attachShadow({ mode: 'open' });
     shadow.innerHTML = `<style>
 .button {
   display: inline-block;
@@ -29,7 +31,5 @@
   transform: translateY(4px);
 }
 </style>
-
 <button class="button">Add to Your Content or Application</button>';
-}
-});
+
