@@ -43,7 +43,7 @@ function drawPercentGauge(ctx, p, col) {
   ctx.lineWidth = 10;
   ctx.stroke();
   ctx.font = "18px Arial";
-  const pLabel = (p * 100).toFixed(1) + "%";
+  const pLabel = (p * 100).toFixed(0) + "%";
   ctx.fillText(pLabel, 75, 85);
 }   
 //EXAMPLE use of percent-gague webComponent in HTML:
