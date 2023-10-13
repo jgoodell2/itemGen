@@ -11,7 +11,7 @@ class ActiveButton extends HTMLElement {
       }
 };
 // Define webComponent as a custom element
-customElements.define('active_button', ActiveButton);
+customElements.define('active-button', ActiveButton);
 
 //EXAMPLE use of activeButton webComponent in HTML:
 //<activeButton id="myButton">Custom element not supported.</activeButton>
