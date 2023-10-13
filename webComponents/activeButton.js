@@ -2,7 +2,7 @@
  * Active Button WebComponent
  * @author Jim Goodell
  */
-class activeButton extends HTMLElement {
+class ActiveButton extends HTMLElement {
       constructor() {
         super();
         // Create shaddow root
@@ -11,7 +11,7 @@ class activeButton extends HTMLElement {
       }
 };
 // Define webComponent as a custom element
-customElements.define('activeButton', activeButton);
+customElements.define('active_button', ActiveButton);
 
 //EXAMPLE use of activeButton webComponent in HTML:
 //<activeButton id="myButton">Custom element not supported.</activeButton>
