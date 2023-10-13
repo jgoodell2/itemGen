@@ -42,7 +42,7 @@ function drawPercentGauge(ctx, p, col) {
   ctx.strokeStyle = col;
   ctx.lineWidth = 10;
   ctx.stroke();
-  ctx.font = "24px Arial";
+  ctx.font = "14px Arial";
   const pLabel = (p * 100).toFixed(2) + "%";
   ctx.fillText(pLabel, 75, 85);
 }   
