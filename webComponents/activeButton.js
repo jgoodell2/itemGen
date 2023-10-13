@@ -2,7 +2,7 @@
  * Active Button WebComponent
  * @author Jim Goodell
  */
- customElements.define('ratio-problem-002', class extends HTMLElement {
+ customElements.define('b', class extends HTMLElement {
   connectedCallback() {
     const shadow = this.attachShadow({mode: 'open'});
     shadow.innerHTML = `<style>
