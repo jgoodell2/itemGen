@@ -7,7 +7,7 @@ class activeButton extends HTMLElement {
         super();
         // Create shaddow root
         const shadowRoot = this.attachShadow({ mode: 'open' });
-    shadow.innerHTML = `<style>
+    shadow.innerHTML = "<style>
 .button {
   display: inline-block;
   padding: 10px 20px;
@@ -31,5 +31,12 @@ class activeButton extends HTMLElement {
   transform: translateY(4px);
 }
 </style>
-<button class="button">Add to Your Content or Application</button>';
+<button class="button">Add to Your Content or Application</button>";
 
+connectedCallback() {}
+}
+// Define webComponent as a custom element
+customElements.define('activeButton', activeButton);
+
+//EXAMPLE use of activeButton webComponent in HTML:
+//<activeButton id="myButton">Custom element not supported.</activeButton>
