@@ -13,6 +13,7 @@ function buildProductsOfCultureChoiceScreen() {
     subTableTd.innerHTML = subTableTdInner;
     
 }
+
 function buildNewProductsOfCultureItem(contextLabel, contextPrompt, contextObjectImagePath, maxX, maxY) {
     //Defaults
     var contextLabel = "Diwali";
@@ -23,6 +24,11 @@ function buildNewProductsOfCultureItem(contextLabel, contextPrompt, contextObjec
     var rows = randomBetween(2,maxY);
     var cols = randomBetween(2,maxX);
     var correctAnswer=rows*cols;
+    while (correctAnswer==answerText.valueOf) { //We don't want to give the student the same problem twice
+        var rows = randomBetween(2,maxY);
+        var cols = randomBetween(2,maxX);
+        var correctAnswer=rows*cols; 
+    }
 
     // Calculate the sixe of object image based on grid and window size
     var maxHeight = (window.innerHeight)/3/rows;
@@ -51,9 +57,11 @@ function randomBetween(min, max) {
         Math.random() * (max - min) + min
     )
 }
+var answerText="";
 function checkAnswer() {
     var answer = document.getElementById("answer").value;
     var correctAnswer = document.getElementById("correctAnswer").value;
+    answerText=correctAnswer;
     if (isNaN(answer) || answer!=correctAnswer) {
         document.getElementById("feedbackArea").innerHTML="Try again.";
     } else {
