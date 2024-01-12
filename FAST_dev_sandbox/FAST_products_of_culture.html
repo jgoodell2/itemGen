@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="css/fast.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/fast.js"></script>
+</head>
+<body id="body" onLoad="buildProductsOfCultureChoiceScreen();">
+    <div id="choiceArea"></div>
+    <div id="menu"><p onclick="toggleMenu();">Something</p><p onclick="toggleMaker()">Something Else</p></div>
+    <canvas id="myCanvas" width="1000" height="1000"></canvas>
+    <div id="mainTableDiv">
+        <table id="mainTable" class="mainTable">
+            <tr id="toprow">
+                <td id="tl" style="width: 30%;height:50%;"></td>
+                <td id="t" style="width: 30%;"></td>
+                <td id="tr" style="width: 30%;"></td>
+            </tr>
+            <tr id="middlerow">
+                <td id="l" style="width: 30%;height:30%"></td>
+                <td id="subTableTd">
+                    <!-- MAIN CONTENT -->
+                    
+            </td>
+            <td id="r" style="width: 30%;"></td>
+            </tr>
+            <tr id="bottomrow">
+            <td id="bl" style="width: 30%;height:20%;"></td>
+            <td id="b" style="width: 30%;"><div id="tempstatus" class="tempstatus"></div></td>
+            <td id="br" style="width: 30%;"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
