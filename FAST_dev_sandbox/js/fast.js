@@ -3,7 +3,17 @@ function toggleMenu() {
     var menu = document.getElementById('menu');
     if (menu.style.visibility=="visible") {menu.style.visibility="hidden";} else {menu.style.visibility="visible";}
 }
+function loadAudioControl() {
+    // run on page load
+    var button = document.getElementById('muteButton');
+    var audio = document.getElementById('audio');
+    var onClick = function() {
+        audio.play(); // audio will load and then play
+    };
+    button.addEventListener('click', onClick, false);
+}
 function buildProductsOfCultureChoiceScreen() {
+    loadAudioControl
     var subTableTd = document.getElementById("choiceArea");
     var subTableTdInner = "<p style='color: white'>Choose a Mathematical Cultural Festival:</p>";
     subTableTdInner+= "<table  class='cols2rows2'><tr><td onclick='buildNewProductsOfCultureItem(\"Diwali\");')>Join me at a Festival of Lights <br/><br/>- Araya</td>";
