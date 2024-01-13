@@ -63,7 +63,7 @@ function checkAnswer() {
     var correctAnswer = document.getElementById("correctAnswer").value;
     answerText=correctAnswer;
     if (isNaN(answer) || answer!=correctAnswer) {
-        playAudioFeedback("audio/ncorrect.m4a");
+        playAudioFeedback("audio/incorrect.m4a");
         document.getElementById("feedbackArea").innerHTML="Try again.";
     } else {
         playAudioFeedback("audio/correct.m4a");
