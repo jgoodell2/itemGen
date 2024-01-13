@@ -63,17 +63,15 @@ function checkAnswer() {
     var correctAnswer = document.getElementById("correctAnswer").value;
     answerText=correctAnswer;
     if (isNaN(answer) || answer!=correctAnswer) {
-        playAudioFeedback("audio/incorrect.mp3"); 
+        playAudioFeedback("incorrectAudio"); // Pass audio cotrol name
         document.getElementById("feedbackArea").innerHTML="Try again.";
     } else {
-        playAudioFeedback("audio/correct.mp3");
+        playAudioFeedback("correctAudio");
         document.getElementById("feedbackArea").innerHTML="Yes! <input type='button' value='Continue' onclick='buildNewProductsOfCultureItem()'>";
     }
 } 
-function playAudioFeedback(audioFile) {
-    var audioControl = document.getElementById("audioControl");
-    audioControl.src = audioFile;
-    audioControl.load();
+function playAudioFeedback(audioControl) {
+    var audioControl = document.getElementById(audioControl);
     audioControl.play();
 }
 function drag_start(event) {
