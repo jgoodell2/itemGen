@@ -63,10 +63,10 @@ function checkAnswer() {
     var correctAnswer = document.getElementById("correctAnswer").value;
     answerText=correctAnswer;
     if (isNaN(answer) || answer!=correctAnswer) {
-        playAudioFeedback("Incorrect.m4a");
+        playAudioFeedback("audio/ncorrect.m4a");
         document.getElementById("feedbackArea").innerHTML="Try again.";
     } else {
-        playAudioFeedback("Correct.m4a");
+        playAudioFeedback("audio/correct.m4a");
         document.getElementById("feedbackArea").innerHTML="Yes! <input type='button' value='Continue' onclick='buildNewProductsOfCultureItem()'>";
     }
 } 
