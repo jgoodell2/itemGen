@@ -21,6 +21,12 @@ body {
 #menu:hover {
     cursor: grab;
 }
+#audioControlDiv {
+	position:  absolute;
+	z-index: 99;
+	top: 0px;
+	float: right;
+}
 .cols2rows2 td {
     width: 50%;
 	height: 300px;
