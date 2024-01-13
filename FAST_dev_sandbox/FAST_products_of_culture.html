@@ -6,6 +6,12 @@
 <script src="./js/fast.js"></script>
 </head>
 <body id="body" onLoad="buildProductsOfCultureChoiceScreen();">
+    <div id="audioControlDiv">
+        <audio controls id="audioControl">
+            <source src="Correct.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
     <div id="choiceArea"></div>
     <div id="menu"><p onclick="toggleMenu();">Something</p><p onclick="toggleMaker()">Something Else</p></div>
     <canvas id="myCanvas" width="1000" height="1000"></canvas>

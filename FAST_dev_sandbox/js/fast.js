@@ -63,11 +63,19 @@ function checkAnswer() {
     var correctAnswer = document.getElementById("correctAnswer").value;
     answerText=correctAnswer;
     if (isNaN(answer) || answer!=correctAnswer) {
+        playAudioFeedback("Incorrect.m4a");
         document.getElementById("feedbackArea").innerHTML="Try again.";
     } else {
+        playAudioFeedback("Correct.m4a");
         document.getElementById("feedbackArea").innerHTML="Yes! <input type='button' value='Continue' onclick='buildNewProductsOfCultureItem()'>";
     }
 } 
+function playAudioFeedback(audioFile) {
+    var audioControl = document.getElementById("audioControl");
+    audioControl.src = audioFile;
+    audioControl.load();
+    audioControl.play();
+}
 function drag_start(event) {
     var dm = document.getElementById('dragme');
     // Compute position clicked within the object relative to the top left of the object, used for precice dropping
