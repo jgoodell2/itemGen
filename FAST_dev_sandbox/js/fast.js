@@ -5,11 +5,11 @@ function toggleMenu() {
 }
 function buildProductsOfCultureChoiceScreen() {
     var subTableTd = document.getElementById("choiceArea");
-    var subTableTdInner = "<p style='color: white'>Choose a a Mathematical Cultural Festival:</p>";
-    subTableTdInner+= "<table  class='cols2rows2'><tr><td onclick='buildNewProductsOfCultureItem(\"Diwali\");')>Join me at a Festival of Lights <br/><br/>- Jamal</td>";
+    var subTableTdInner = "<p style='color: white'>Choose a Mathematical Cultural Festival:</p>";
+    subTableTdInner+= "<table  class='cols2rows2'><tr><td onclick='buildNewProductsOfCultureItem(\"Diwali\");')>Join me at a Festival of Lights <br/><br/>- Araya</td>";
     subTableTdInner+= "<td onclick='buildNewProductsOfCultureItem(\"Día de los Muertos\");'>Join me at the Global Gourmet Gala <br/><br/>- Mia</td></tr>";
-    subTableTdInner+= "<tr onclick='buildNewProductsOfCultureItem(\"Eid al-Fitr\");'><td>Join me at a Melody Math Fair <br/><br/>- Isabella</td>";
-    subTableTdInner+= "<td onclick='buildNewProductsOfCultureItem(\"Lunar New Year\");'>Join me at the Season of Giving <br/><br/>- Sam</td></tr></table>";
+    subTableTdInner+= "<tr onclick='buildNewProductsOfCultureItem(\"Eid al-Fitr\");'><td>Join me at a Melody Math Fair <br/><br/>- Jamal</td>";
+    subTableTdInner+= "<td onclick='buildNewProductsOfCultureItem(\"Lunar New Year\");'>Join me at the Season of Giving <br/><br/>- Emily</td></tr></table>";
     subTableTd.innerHTML = subTableTdInner;
     
 }
@@ -63,15 +63,22 @@ function checkAnswer() {
     var correctAnswer = document.getElementById("correctAnswer").value;
     answerText=correctAnswer;
     if (isNaN(answer) || answer!=correctAnswer) {
-        playAudioFeedback("incorrectAudio"); // Pass audio cotrol name
+        playAudioFeedback("incorrect"); // Pass audio clip name
         document.getElementById("feedbackArea").innerHTML="Try again.";
     } else {
-        playAudioFeedback("correctAudio");
+        playAudioFeedback("correct");
         document.getElementById("feedbackArea").innerHTML="Yes! <input type='button' value='Continue' onclick='buildNewProductsOfCultureItem()'>";
     }
 } 
-function playAudioFeedback(audioControl) {
+function toggleMute() {
+    // run on page load
+    var audio = document.getElementById('audio');
+    audio.play(); // audio will load and then play
+}
+function playAudioFeedback(audioClip) {
     var audioControl = document.getElementById(audioControl);
+    var filePath = "audio/"+audioClip+".mp3"
+    audioControl.load(filePath);
     audioControl.play();
 }
 function drag_start(event) {
