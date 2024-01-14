@@ -3,17 +3,7 @@ function toggleMenu() {
     var menu = document.getElementById('menu');
     if (menu.style.visibility=="visible") {menu.style.visibility="hidden";} else {menu.style.visibility="visible";}
 }
-function loadAudioControl() {
-    // run on page load
-    var button = document.getElementById('muteButton');
-    var audio = document.getElementById('audio');
-    var onClick = function() {
-        audio.play(); // audio will load and then play
-    };
-    button.addEventListener('click', onClick, false);
-}
 function buildProductsOfCultureChoiceScreen() {
-    loadAudioControl
     var subTableTd = document.getElementById("choiceArea");
     var subTableTdInner = "<p style='color: white'>Choose a Mathematical Cultural Festival:</p>";
     subTableTdInner+= "<table  class='cols2rows2'><tr><td onclick='buildNewProductsOfCultureItem(\"Diwali\");')>Join me at a Festival of Lights <br/><br/>- Araya</td>";
@@ -21,7 +11,6 @@ function buildProductsOfCultureChoiceScreen() {
     subTableTdInner+= "<tr onclick='buildNewProductsOfCultureItem(\"Eid al-Fitr\");'><td>Join me at a Melody Math Fair <br/><br/>- Jamal</td>";
     subTableTdInner+= "<td onclick='buildNewProductsOfCultureItem(\"Lunar New Year\");'>Join me at the Season of Giving <br/><br/>- Emily</td></tr></table>";
     subTableTd.innerHTML = subTableTdInner;
-    
 }
 
 function buildNewProductsOfCultureItem(contextLabel, contextPrompt, contextObjectImagePath, maxX, maxY) {
@@ -83,13 +72,25 @@ function checkAnswer() {
 function toggleMute() {
     // run on page load
     var audio = document.getElementById('audio');
+    var muteButton = document.getElementById("muteButton");
+    if (audio.muted) {
+        muteButton.src="images/unmuted.png";
+        audio.muted=false;
+    } else {
+        muteButton.src="images/muted.png";
+        audio.muted=true;
+    }
     audio.play(); // audio will load and then play
+    var userAgent = window.navigator.userAgent;
+    if (userAgent.includes("Safari")) {
+        alert("Audio feedback not supported on Safari browsers.");
+    }
 }
 function playAudioFeedback(audioClip) {
     var audioControl = document.getElementById(audioControl);
     var filePath = "audio/"+audioClip+".mp3"
-    audioControl.load(filePath);
-    audioControl.play();
+    audio.src = filePath;
+    audio.play();
 }
 function drag_start(event) {
     var dm = document.getElementById('dragme');

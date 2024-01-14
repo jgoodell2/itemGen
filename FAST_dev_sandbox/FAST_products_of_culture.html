@@ -6,10 +6,10 @@
 <script src="./js/fast.js"></script>
 </head>
 <body id="body" onLoad="buildProductsOfCultureChoiceScreen();">
-    <div id="audioControlDiv">
-        <img id="muteButton" src="images/unmute.png"><!--User action control required for audio in Safari-->
-        <audio id="audio" preload="auto">
-            <source src="audio/correct.mp3" type="audio/mpeg">
+    <div id="audioDiv">
+        <img id="muteButton" src="images/muted.png" onclick="toggleMute()"><!--User action control required for audio in Safari-->
+        <audio id="audio" muted>
+            <source src="audio/correct.mp3">
             Your browser does not support the audio tag.
         </audio>
     </div>
