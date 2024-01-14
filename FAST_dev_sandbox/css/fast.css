@@ -21,11 +21,17 @@ body {
 #menu:hover {
     cursor: grab;
 }
-#audioControlDiv {
+#audioDiv {
 	position:  absolute;
-	z-index: 99;
+	z-index: 999;
 	top: 0px;
+	right: 0px;
 	float: right;
+}
+#muteButton {
+    width: 24px;
+	height: 24px;
+	opacity: 0.5;
 }
 .cols2rows2 td {
     width: 50%;
